@@ -1,0 +1,68 @@
+后台接口文档
+
+http://localhost:3000
+
+User模块
+http://localhost:3000/users
+
+1.增加  http://localhost:3000/users/data    post
+    name            string          required
+    password        string          required
+    sex             string          options
+返回
+{
+    _id:'xxx',
+    name:'xxx',
+    password:'xxx',
+    sex:'xxx'
+}
+
+2.修改 http://localhost:3000/users/data/:id     put
+    id              string          required
+    name            string          options
+    password        string          options
+    sex             string          options
+返回
+{
+    _id:'xxx',
+    name:'xxx',
+    password:'xxx',
+    sex:'xxx'
+}
+
+3.删除 http://localhost:3000/users/data/:id     delete
+返回
+{
+    _id:'xxx',
+    name:'xxx',
+    password:'xxx',
+    sex:'xxx'
+}
+
+4.查找 http://localhost:3000/users/list     post
+    page            number              options
+    limit           number              options
+    name            string              options
+返回
+{
+    "docs": [
+        {
+            "_id": "5c1a44bc1b5e4326f81d3bcf",
+            "name": "zhangsan",
+            "password": "black",
+            "sex": "男",
+            "__v": 0
+        },
+        {
+            "_id": "5c1a467ad1fad12c60ce50f5",
+            "name": "lisi",
+            "password": "123456",
+            "sex": "男",
+            "__v": 0
+        }
+    ],
+    "total": 3,
+    "limit": 2,
+    "page": 1,
+    "pages": 2
+}
